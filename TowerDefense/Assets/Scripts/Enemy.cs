@@ -1,38 +1,51 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    public float startSpeed = 10f;
+    [HideInInspector]
     public float speed = 10f;
-    private Transform target;
-    private int wavepointIndex = 0;
+    public float starthealth = 100;
+    private float health;
+    
+    public int worth = 50;
+    public GameObject deathEffect;
+    [Header("Unity Stuff")] 
+    public Image healthBar;
+
 
     private void Start()
     {
-        target = Waypoints.points[0];
+        speed = startSpeed;
+        health = starthealth;
     }
-
-    private void Update()
+    public void TakeDamage(float amount)
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized*speed*Time.deltaTime,Space.World );
-        if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+        health -= amount;
+        healthBar.fillAmount = health/starthealth;
+        if (health <= 0)
         {
-            GetNextWaypoint();
+            Die();
         }
     }
 
-    void GetNextWaypoint()
+
+    public void Slow(float pct)
     {
-        if(wavepointIndex>=Waypoints.points.Length-1)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        
-        wavepointIndex++;
-        target = Waypoints.points[wavepointIndex];
+        speed = startSpeed *(1f - pct);
     }
+    void Die()
+    {
+       GameObject effect= Instantiate(deathEffect, transform.position, Quaternion.identity);
+       Destroy(effect,5f);
+        PlayerStats.Money += worth;
+        Destroy(gameObject);
+    }
+
+    
 }
