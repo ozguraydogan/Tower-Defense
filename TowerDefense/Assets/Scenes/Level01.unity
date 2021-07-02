@@ -4320,6 +4320,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 3692727327587200992, guid: af99e847ee6da9f459271abb9d2394a5, type: 3}
   spawnPoint: {fileID: 1203674498}
   timeBetweenWaves: 2
+  gameManager: {fileID: 0}
   waveCountdownText: {fileID: 1090438749}
 --- !u!4 &472781779
 Transform:
@@ -4377,6 +4378,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 747801934}
+  nextLevel: Level02
+  levelToUnluck: 2
+  sceneFader: {fileID: 2100269916655591850}
 --- !u!114 &472781783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7557,7 +7561,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7176236}
   m_AnchorMax: {x: 1, y: 0.96111786}
-  m_AnchoredPosition: {x: 4.4332275, y: 0.4295044}
+  m_AnchoredPosition: {x: 4.4332275, y: 0.42944336}
   m_SizeDelta: {x: 8.120316, y: 2.0593834}
   m_Pivot: {x: 0.52992666, y: 1.2581421}
 --- !u!114 &835534561
@@ -16322,7 +16326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.14124802, y: 0.095000006}
   m_AnchorMax: {x: 0.45275202, y: 0.26500002}
-  m_AnchoredPosition: {x: 2, y: 1.0099792}
+  m_AnchoredPosition: {x: 2, y: 1.0099487}
   m_SizeDelta: {x: 1.6988983, y: -1.8227997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754370587
@@ -19885,7 +19889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.2251, y: -4.8262}
+  m_AnchoredPosition: {x: 4.2250977, y: -4.826172}
   m_SizeDelta: {x: 8.4503, y: 9.6625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2144488098

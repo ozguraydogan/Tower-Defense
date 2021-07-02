@@ -995,6 +995,41 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1580534452 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1322833951661556315, guid: 441edfaf481dfde42b4a8e95c46f7235, type: 3}
+  m_PrefabInstance: {fileID: 99500226617151505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1580534453
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580534452}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58ce820ee225b2a4d856bce23f1ec04e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1580534454 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7939964836153154955, guid: 441edfaf481dfde42b4a8e95c46f7235, type: 3}
+  m_PrefabInstance: {fileID: 99500226617151505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580534452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620973853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1060,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 676792631}
+  levelButtons:
+  - {fileID: 1580534454}
+  - {fileID: 1759282889}
 --- !u!4 &1620973855
 Transform:
   m_ObjectHideFlags: 0
@@ -1118,6 +1156,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658259431}
   m_CullTransparentMesh: 1
+--- !u!114 &1759282889 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7939964836153154955, guid: 441edfaf481dfde42b4a8e95c46f7235, type: 3}
+  m_PrefabInstance: {fileID: 1894426056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1803933387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,6 +1494,10 @@ PrefabInstance:
     - target: {fileID: 1322833951661556315, guid: 441edfaf481dfde42b4a8e95c46f7235, type: 3}
       propertyPath: m_Name
       value: LevelButtun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822651606047773468, guid: 441edfaf481dfde42b4a8e95c46f7235, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3987792812775746372, guid: 441edfaf481dfde42b4a8e95c46f7235, type: 3}
       propertyPath: m_Pivot.x

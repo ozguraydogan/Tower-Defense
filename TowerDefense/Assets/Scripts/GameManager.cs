@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public static bool GameIsOver = false;
     public GameObject gameOverUI;
 
+    public string nextLevel = "Level02";
+    public int levelToUnluck = 2;
+    public SceneFader sceneFader;
     private void Start()
     {
         GameIsOver = false;
@@ -31,5 +34,11 @@ public class GameManager : MonoBehaviour
     {
         GameIsOver = true;
         gameOverUI.SetActive(true);
+    }
+
+    public void WinLevel()
+    {
+        PlayerPrefs.SetInt(nextLevel,levelToUnluck );
+        sceneFader.FateTo(nextLevel);
     }
 }
