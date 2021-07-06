@@ -23,6 +23,7 @@ public class EnemyMovement : MonoBehaviour
         {
             GetNextWaypoint();
         }
+        transform.LookAt(target);
 
         _enemy.speed = _enemy.startSpeed;
     }

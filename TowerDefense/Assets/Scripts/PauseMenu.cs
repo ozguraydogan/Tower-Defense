@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
     public void Toggle()
     {
         ui.SetActive(!ui.activeSelf);
-
+        
         if (ui.activeSelf)
         {
             Time.timeScale = 0f;
@@ -35,7 +35,6 @@ public class PauseMenu : MonoBehaviour
     {
         Toggle();
         sceneFader.FateTo(SceneManager.GetActiveScene().name);
-     
     }
 
     public void Menu()
@@ -43,4 +42,5 @@ public class PauseMenu : MonoBehaviour
         Toggle();
         sceneFader.FateTo(menuSceneName);
     }
+    
 }
