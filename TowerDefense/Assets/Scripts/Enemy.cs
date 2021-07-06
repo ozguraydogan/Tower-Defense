@@ -18,14 +18,19 @@ public class Enemy : MonoBehaviour
     [Header("Unity Stuff")] 
     public Image healthBar;
 
-    private WaveSpawner decrease;
+    public EnemyCounter enemyCounter;
+
+    
+
 
 
     private void Start()
     {
+       
         speed = startSpeed;
         health = starthealth;
     }
+    
     public void TakeDamage(float amount)
     {
         health -= amount;
@@ -43,13 +48,13 @@ public class Enemy : MonoBehaviour
     }
     void Die()
     {
-        
-       GameObject effect= Instantiate(deathEffect, transform.position, Quaternion.identity);
+        GameObject effect= Instantiate(deathEffect, transform.position, Quaternion.identity);
        Destroy(effect,5f);
        WaveSpawner.EnemiesAlive--;
        PlayerStats.Money += worth;
-       decrease.counter--;
-        Destroy(gameObject);
+       enemyCounter.counter--;
+    
+       Destroy(gameObject);
     }
 
     

@@ -267,6 +267,7 @@ MonoBehaviour:
   worth: 50
   deathEffect: {fileID: 9136523202723205628, guid: 4d6c58c8dd71dbc47b13337c597ef3d1, type: 3}
   healthBar: {fileID: 1158541471057136635}
+  enemyCounter: {fileID: 11400000, guid: bca73522a1c20584f98562e893f18919, type: 2}
 --- !u!114 &-7033931776096595500
 MonoBehaviour:
   m_ObjectHideFlags: 0

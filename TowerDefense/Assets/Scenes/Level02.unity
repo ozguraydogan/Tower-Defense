@@ -4322,6 +4322,8 @@ MonoBehaviour:
   timeBetweenWaves: 2
   gameManager: {fileID: 472781782}
   waveCountdownText: {fileID: 1090438749}
+  a: 0
+  enemyCounter: {fileID: 11400000, guid: bca73522a1c20584f98562e893f18919, type: 2}
 --- !u!4 &472781779
 Transform:
   m_ObjectHideFlags: 0
@@ -6838,7 +6840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 873aa30ab5b52024788ec38ae7a2ba83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundsText: {fileID: 1342642213}
+  ui: {fileID: 0}
   sceneFader: {fileID: 0}
   menuSceneName: MainMenu
 --- !u!225 &747801937

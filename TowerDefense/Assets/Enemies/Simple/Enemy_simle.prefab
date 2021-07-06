@@ -261,12 +261,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7d94e00ac83de499c91a043c26f531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 30
+  startSpeed: 10
   speed: 10
   starthealth: 100
   worth: 50
   deathEffect: {fileID: 9136523202723205628, guid: bc0d98df4faa37a469dbc2c337163484, type: 3}
   healthBar: {fileID: 1158541471057136635}
+  enemyCounter: {fileID: 11400000, guid: bca73522a1c20584f98562e893f18919, type: 2}
+  deneme: {fileID: 0}
 --- !u!114 &-7033931776096595500
 MonoBehaviour:
   m_ObjectHideFlags: 0

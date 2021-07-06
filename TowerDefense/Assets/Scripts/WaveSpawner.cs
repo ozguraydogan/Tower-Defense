@@ -18,12 +18,13 @@ public class WaveSpawner : MonoBehaviour
     public GameManager gameManager;
 
     public Text waveCountdownText;
-    public int counter=0;
-    
+    public int a;
+    public EnemyCounter enemyCounter;
     private void Start()
     {
         EnemiesAlive = 0;
         Debug.Log("Start");
+        enemyCounter.counter=waves[waves.Length - 1].count;
     }
 
     private void Update()
@@ -44,6 +45,7 @@ public class WaveSpawner : MonoBehaviour
 
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
         waveCountdownText.text = string.Format("{0:00.00}",countdown);
+        LevelWin();
     }
 
     IEnumerator SpawnWave()
@@ -51,27 +53,19 @@ public class WaveSpawner : MonoBehaviour
         Wave wave = waves[waveIndex];
         //EnemiesAlive = wave.count;  //yeniden spawn olmasını engelliyor
         PlayerStats.Rounds++;
-        counter = wave.count;
-      
-            for (int i = 0; i < wave.count; i++)
+       
+
+
+        for (int i = 0; i < wave.count; i++)
             {
                 SpawnEnemy(wave.enemy);
                 yield return new WaitForSeconds(1f / wave.rate);
+                
             }
-            
-            waveIndex++;
-            
-            if(waveIndex==waves.Length &&counter<=0)
-            {
-                Debug.Log("Level Won");
-                gameManager.WinLevel();
-         
-                //SceneManager.LoadScene(SceneManager.GetActsiveScene().buildIndex);
 
-                this.enabled = false;
-            }
-        
-   
+       
+        waveIndex++;
+  
     }
 
     void SpawnEnemy(GameObject enemy)
@@ -79,5 +73,18 @@ public class WaveSpawner : MonoBehaviour
         Instantiate(enemy,spawnPoint.position,spawnPoint.rotation);
         EnemiesAlive++;
         Debug.Log(EnemiesAlive.ToString());
+    }
+
+    void LevelWin()
+    {
+        if(waveIndex==waves.Length &&enemyCounter.counter<=0)
+        {
+            Debug.Log("Level Won");
+            gameManager.WinLevel();
+         
+            //SceneManager.LoadScene(SceneManager.GetActsiveScene().buildIndex);
+
+            this.enabled = false;
+        }
     }
 }
