@@ -4320,6 +4320,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 3692727327587200992, guid: af99e847ee6da9f459271abb9d2394a5, type: 3}
   spawnPoint: {fileID: 1203674498}
   timeBetweenWaves: 2
+  gameManager: {fileID: 472781782}
   waveCountdownText: {fileID: 1090438749}
 --- !u!4 &472781779
 Transform:
@@ -4377,6 +4378,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 747801934}
+  nextLevel: Level02
+  levelToUnluck: 2
+  sceneFader: {fileID: 2100269916655591850}
 --- !u!114 &472781783
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class WaveSpawner : MonoBehaviour
 {
-    public static int EnemiesAlive=0;
+    public static int EnemiesAlive;
     public Wave[] waves;
 
     public Transform enemyPrefab;
@@ -17,19 +18,28 @@ public class WaveSpawner : MonoBehaviour
     public GameManager gameManager;
 
     public Text waveCountdownText;
+    public int counter=0;
+    
+    private void Start()
+    {
+        EnemiesAlive = 0;
+        Debug.Log("Start");
+    }
+
     private void Update()
     {
         if (EnemiesAlive>0)
         {
             return; 
         }
+        
         if (countdown <= 0f)
         {
-            StartCoroutine(SpawnWave());
+            Debug.Log("deneme");
+             StartCoroutine(SpawnWave());
              countdown = timeBetweenWaves;
              return;
         }
-
         countdown -= Time.deltaTime;
 
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
@@ -39,28 +49,35 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         Wave wave = waves[waveIndex];
-
-        EnemiesAlive = wave.count;
+        //EnemiesAlive = wave.count;  //yeniden spawn olmasını engelliyor
         PlayerStats.Rounds++;
-        for (int i = 0; i < wave.count; i++)
-        {
-            SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(1f/wave.rate);
-        }
-        waveIndex++;
-        
-        if(waveIndex==waves.Length)
-        {
-         gameManager.WinLevel();
+        counter = wave.count;
+      
+            for (int i = 0; i < wave.count; i++)
+            {
+                SpawnEnemy(wave.enemy);
+                yield return new WaitForSeconds(1f / wave.rate);
+            }
+            
+            waveIndex++;
+            
+            if(waveIndex==waves.Length &&counter<=0)
+            {
+                Debug.Log("Level Won");
+                gameManager.WinLevel();
          
-            this.enabled = false;
-        }
+                //SceneManager.LoadScene(SceneManager.GetActsiveScene().buildIndex);
+
+                this.enabled = false;
+            }
+        
+   
     }
 
     void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy,spawnPoint.position,spawnPoint.rotation);
         EnemiesAlive++;
+        Debug.Log(EnemiesAlive.ToString());
     }
-     
 }

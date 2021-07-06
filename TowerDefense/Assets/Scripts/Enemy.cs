@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     [Header("Unity Stuff")] 
     public Image healthBar;
 
+    private WaveSpawner decrease;
+
 
     private void Start()
     {
@@ -46,6 +48,7 @@ public class Enemy : MonoBehaviour
        Destroy(effect,5f);
        WaveSpawner.EnemiesAlive--;
        PlayerStats.Money += worth;
+       decrease.counter--;
         Destroy(gameObject);
     }
 

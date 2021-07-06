@@ -121,7 +121,8 @@ public class Node : MonoBehaviour
         if (_buildManager.HasMoney)
         {
             rend.material.color = hoverColor;
-        }else
+        }
+        else
         {
             rend.material.color = notEnoughMoneyColor;
         }

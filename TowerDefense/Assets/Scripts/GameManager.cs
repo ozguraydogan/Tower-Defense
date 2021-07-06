@@ -7,10 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public static bool GameIsOver = false;
     public GameObject gameOverUI;
-
+    
     public string nextLevel = "Level02";
     public int levelToUnluck = 2;
     public SceneFader sceneFader;
+    
     private void Start()
     {
         GameIsOver = false;
@@ -20,13 +21,11 @@ public class GameManager : MonoBehaviour
     {
         if(GameIsOver)
             return;
-        if (Input.GetKeyDown("e"))
-        {
-            EndGame();
-        }
+      
         if (PlayerStats.Lives <= 0)
         {
             EndGame();
+            GetComponent<WaveSpawner>().enabled = false;
         }
     }
 

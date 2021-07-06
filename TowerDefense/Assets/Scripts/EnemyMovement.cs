@@ -9,7 +9,6 @@ public class EnemyMovement : MonoBehaviour
     private Transform target;
 
     private Enemy _enemy;
-
     private void Start()
     {
         _enemy = GetComponent<Enemy>();
@@ -44,6 +43,7 @@ public class EnemyMovement : MonoBehaviour
     {
         WaveSpawner.EnemiesAlive--;
         PlayerStats.Lives--;
+        
         Destroy(gameObject);
     }
 }

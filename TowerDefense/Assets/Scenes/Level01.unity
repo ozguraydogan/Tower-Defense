@@ -4282,6 +4282,7 @@ GameObject:
   - component: {fileID: 472781781}
   - component: {fileID: 472781782}
   - component: {fileID: 472781783}
+  - component: {fileID: 472781784}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -4304,24 +4305,16 @@ MonoBehaviour:
   waves:
   - enemy: {fileID: 4320125453052868065, guid: af99e847ee6da9f459271abb9d2394a5, type: 3}
     count: 1
-    rate: 1
-  - enemy: {fileID: 4320125453052868065, guid: af99e847ee6da9f459271abb9d2394a5, type: 3}
-    count: 3
-    rate: 1
-  - enemy: {fileID: 4320125453052868065, guid: af99e847ee6da9f459271abb9d2394a5, type: 3}
-    count: 6
     rate: 2
   - enemy: {fileID: 4320125453052868065, guid: fe00f8fd5a5a62e47aa45132c41c1fae, type: 3}
-    count: 3
+    count: 2
     rate: 1
-  - enemy: {fileID: 0}
-    count: 0
-    rate: 0
   enemyPrefab: {fileID: 3692727327587200992, guid: af99e847ee6da9f459271abb9d2394a5, type: 3}
   spawnPoint: {fileID: 1203674498}
   timeBetweenWaves: 2
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 472781782}
   waveCountdownText: {fileID: 1090438749}
+  counter: 0
 --- !u!4 &472781779
 Transform:
   m_ObjectHideFlags: 0
@@ -4363,7 +4356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607e6fbb9310df34ab6b076e7640df48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 400
+  startMoney: 1500
   startLives: 1
 --- !u!114 &472781782
 MonoBehaviour:
@@ -4394,6 +4387,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 1174040612}
+  sceneFader: {fileID: 2100269916655591850}
+  menuSceneName: MainMenu
+--- !u!114 &472781784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472781777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 873aa30ab5b52024788ec38ae7a2ba83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 747801934}
   sceneFader: {fileID: 2100269916655591850}
   menuSceneName: MainMenu
 --- !u!1 &475283340
@@ -6838,7 +6846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 873aa30ab5b52024788ec38ae7a2ba83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundsText: {fileID: 1342642213}
+  ui: {fileID: 0}
   sceneFader: {fileID: 0}
   menuSceneName: MainMenu
 --- !u!225 &747801937
@@ -7947,7 +7955,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 87.909485, y: -49.297806}
+  m_AnchoredPosition: {x: 166.04152, y: -49.297806}
   m_SizeDelta: {x: 158.5247, y: 96.9978}
   m_Pivot: {x: 0.49999994, y: 0.5}
 --- !u!225 &885904110
@@ -11060,7 +11068,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 271.72845, y: -49.297806}
+  m_AnchoredPosition: {x: 506.12457, y: -49.297806}
   m_SizeDelta: {x: 158.5247, y: 96.9978}
   m_Pivot: {x: 0.49999994, y: 0.5}
 --- !u!225 &1190386843
@@ -13642,9 +13650,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 747801936}
+      - m_Target: {fileID: 472781784}
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: Menu
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16373,7 +16381,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 747801936}
+      - m_Target: {fileID: 472781784}
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
         m_MethodName: Retry
         m_Mode: 1
